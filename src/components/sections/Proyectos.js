@@ -1,5 +1,5 @@
 import { useApp } from "../../context/AppContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button, Modal, Accordion } from "react-bootstrap";
 import col1 from "../../assets/proyectos/col/col1.jpg";
 import col2 from "../../assets/proyectos/col/col2.jpg";
@@ -16,8 +16,12 @@ import exp2 from "../../assets/proyectos/expert/exp2.jpg";
 import exp3 from "../../assets/proyectos/expert/exp3.jpg";
 import exp4 from "../../assets/proyectos/expert/exp4.jpg";
 import exp5 from "../../assets/proyectos/expert/exp5.jpg";
+import hector1 from "../../assets/proyectos/hector/h1.jpg";
+import hector2 from "../../assets/proyectos/hector/h2.jpg";
+import hector3 from "../../assets/proyectos/hector/h3.jpg";
+import hector4 from "../../assets/proyectos/hector/h4.jpg";
 function Proyectos() {
-  const { color, language } = useApp();
+  const { color, language, activarModal, desactivarModal } = useApp();
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
   const [show3, setShow3] = useState(false);
@@ -25,48 +29,59 @@ function Proyectos() {
   const fotosCol = [col1, col2, col3, col4, col5];
   const fotosPets = [pets1, pets2, pets3, pets4, pets5];
   const fotosExp = [exp1, exp2, exp3, exp4, exp5];
+  const fotosHector = [hector1, hector2, hector3, hector4];
   const handleShow1 = () => {
     setShow1(true);
+    activarModal();
   };
   const handleClose1 = () => {
     setShow1(false);
+    desactivarModal();
   };
   const handleShow2 = () => {
     setShow2(true);
+    activarModal();
   };
   const handleClose2 = () => {
     setShow2(false);
+    desactivarModal();
   };
   const handleShow3 = () => {
     setShow3(true);
+    activarModal();
   };
   const handleClose3 = () => {
     setShow3(false);
+    desactivarModal();
   };
   const handleShow4 = () => {
     setShow4(true);
+    activarModal();
   };
   const handleClose4 = () => {
     setShow4(false);
+    desactivarModal();
   };
   const FotosView = (data) => {
     const [selected, setSelected] = useState(0);
     const [sel, setSel] = useState(true);
-    setTimeout(() => {
-      if (sel) {
-        if (selected === data.data.length - 1) {
-          setSelected(0);
-        } else {
-          setSelected(selected + 1);
+    useEffect(() => {
+      const setMas = () =>{
+        if (sel){
+          if (selected === data.data.length - 1) {
+            setSelected(0);
+          } else {
+            setSelected(selected + 1);
+          }
+        } else{
+          setSel(true)
         }
       }
-    }, 5000);
-    if (!sel) {
-      setTimeout(() => {
-        setSel(true);
-      }, 2000);
-    }
-
+      const intervalId = setInterval(() => {
+        setMas()
+      }, 5000);
+      return () => clearInterval(intervalId);
+    }, [sel, selected, data]);
     return (
       <div className="d-flex flex-column justify-content-center pe-md-0 ps-md-0 ps-lg-5 pe-lg-5">
         <img
@@ -76,12 +91,17 @@ function Proyectos() {
         />
         <div className="d-flex flex-row justify-content-center m-2">
           {data.data.map((img, i) => {
+            let clas = ""
+            if (i === selected){
+              clas="selectedButton"
+            }
             return (
               <button
-                className="btn btn-ligth ps-1 pe-1 ps-md-2 pe-md-2"
+                className={`btn btn-ligth mt-1 ms-1 me-1 ms-md-2 me-md-2 ms-lg-3 me-lg-3 p-0 ${clas}`}
                 key={i}
                 onClick={(e) => {
                   e.preventDefault();
+                  setSel(false)
                   setSelected(i);
                 }}
               >
@@ -126,7 +146,7 @@ function Proyectos() {
             <div
               className="text-start text-md-center modal-links"
               style={{
-                color: color.menuItems,
+                color: color.titleView,
               }}
             >
               <div>{language.projectTitles.a}</div>
@@ -138,7 +158,7 @@ function Proyectos() {
                   href="https://colombia-emprende.vercel.app/"
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: color.link }}
+                  style={{ color: color.linksView }}
                 >
                   https://colombia-emprende.vercel.app/
                 </a>
@@ -153,7 +173,7 @@ function Proyectos() {
                   href="https://github.com/HectorBetan/Colombia-Emprende"
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: color.link }}
+                  style={{ color: color.linksView }}
                 >
                   https://github.com/HectorBetan/Colombia-Emprende
                 </a>
@@ -168,7 +188,7 @@ function Proyectos() {
                   href="https://github.com/HectorBetan/Colombia-Emprende-Server"
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: color.link }}
+                  style={{ color: color.linksView }}
                 >
                   https://github.com/HectorBetan/Colombia-Emprende-Server
                 </a>
@@ -325,7 +345,7 @@ function Proyectos() {
             <div
               className="text-start text-md-center modal-links"
               style={{
-                color: color.menuItems,
+                color: color.titleView,
               }}
             >
               <div>{language.projectTitles.a}</div>
@@ -337,7 +357,7 @@ function Proyectos() {
                   href="https://petsandpetsaxm.web.app/"
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: color.link }}
+                  style={{ color: color.linksView }}
                 >
                   https://petsandpetsaxm.web.app/
                 </a>
@@ -350,7 +370,7 @@ function Proyectos() {
                   href="https://github.com/HectorBetan/pets-and-pets"
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: color.link }}
+                  style={{ color: color.linksView }}
                 >
                   https://github.com/HectorBetan/pets-and-pets
                 </a>
@@ -471,7 +491,7 @@ function Proyectos() {
             <div
               className="text-start text-md-center modal-links"
               style={{
-                color: color.menuItems,
+                color: color.titleView,
               }}
             >
               <div>{language.projectTitles.a}</div>
@@ -483,7 +503,7 @@ function Proyectos() {
                   href="https://hectorbetan.github.io/"
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: color.link }}
+                  style={{ color: color.linksView }}
                 >
                   https://hectorbetan.github.io/
                 </a>
@@ -496,7 +516,7 @@ function Proyectos() {
                   href="https://github.com/HectorBetan/Hector-Betan-Page"
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: color.link }}
+                  style={{ color: color.linksView }}
                 >
                   https://github.com/HectorBetan/Hector-Betan-Page
                 </a>
@@ -542,7 +562,7 @@ function Proyectos() {
                       color: color.text1,
                     }}
                   >
-                    <FotosView data={fotosExp}></FotosView>
+                    <FotosView data={fotosHector}></FotosView>
                   </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item
@@ -635,7 +655,7 @@ function Proyectos() {
             <div
               className="text-start text-md-center modal-links"
               style={{
-                color: color.menuItems,
+                color: color.titleView,
               }}
             >
 
@@ -647,7 +667,7 @@ function Proyectos() {
                   href="https://github.com/HectorBetan/ExpertApp"
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: color.link }}
+                  style={{ color: color.linksView }}
                 >
                   https://github.com/HectorBetan/ExpertApp
                 </a>
@@ -757,8 +777,8 @@ function Proyectos() {
             <h3 className="mb-0" style={{ color: color.title1 }}>
               Colombia Emprende
             </h3>
-            <div className="">
-            {language.project.col}
+            <div className="project-desc">
+            {language.projects.col}
             </div>
           </div>
           <div className="flex-shrink-0 ms-lg-5 me-lg-2 me-xl-4 me-xxl-5">
@@ -779,7 +799,7 @@ function Proyectos() {
             <h3 className="mb-0" style={{ color: color.title1 }}>
               Pets <span className="fw-bold fuente">&</span> Pets
             </h3>
-            <div className="">{language.project.pets}</div>
+            <div className="project-desc">{language.projects.pets}</div>
           </div>
           <div className="flex-shrink-0 ms-lg-5 me-lg-2 me-xl-4 me-xxl-5">
             <button
@@ -799,8 +819,8 @@ function Proyectos() {
             <h3 className="mb-0" style={{ color: color.title1 }}>
               Expert App
             </h3>
-            <div className="">
-            {language.project.exp}
+            <div className="project-desc">
+            {language.projects.exp}
             </div>
           </div>
           <div className="flex-shrink-0 ms-lg-5 me-lg-2 me-xl-4 me-xxl-5">
@@ -821,8 +841,8 @@ function Proyectos() {
             <h3 className="mb-0" style={{ color: color.title1 }}>
               Portafolio Hector Betancourt
             </h3>
-            <div className="">
-            {language.project.hector}
+            <div className="project-desc">
+            {language.projects.hector}
             </div>
           </div>
           <div className="flex-shrink-0 ms-lg-5 me-lg-2 me-xl-4 me-xxl-5">

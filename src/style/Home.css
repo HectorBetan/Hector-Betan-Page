@@ -606,11 +606,6 @@ progress {
   display: none !important;
 }
 
-.lead {
-  font-size: 1.25rem;
-  font-weight: 300;
-}
-
 .display-1 {
   font-size: calc(1.625rem + 4.5vw);
   font-weight: 300;
@@ -3228,7 +3223,7 @@ fieldset:disabled .btn {
   color: #000;
   background-color: #c77556;
   border-color: #5988d943;
-  box-shadow: 0 0 0 0.25rem rgba(161, 79, 48, 0.5);
+  box-shadow: 0 0 0 0.25rem rgba(48, 114, 161, 0.5);
 }
 .btn-check:checked + .btn-primary,
 .btn-check:active + .btn-primary,
@@ -3244,7 +3239,7 @@ fieldset:disabled .btn {
 .btn-primary:active:focus,
 .btn-primary.active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.25rem rgba(161, 79, 48, 0.5);
+  box-shadow: 0 0 0 0.25rem rgba(48, 123, 161, 0.5);
 }
 .btn-primary:disabled,
 .btn-primary.disabled {
@@ -5119,6 +5114,7 @@ fieldset:disabled .btn {
 
 .accordion-body {
   padding: 2.5rem 2.5rem;
+  text-align: justify;
 }
 
 .accordion-flush .accordion-collapse {
@@ -11785,8 +11781,38 @@ h1,
 }
 
 p.lead {
-  font-size: 1.15rem;
+  font-size: 20px;
   font-weight: 400;
+  text-align: justify;
+}
+.interests {
+  text-align: justify;
+  font-size: 18px;
+}
+#certificados li{
+  font-size: 18px;
+}
+@media (max-width: 1300px) {
+  p.lead {
+    font-size: 18px;
+  }
+  .interests {
+    font-size: 17px;
+  }
+  #certificados li{
+    font-size: 17px;
+  }
+}
+@media (max-width: 500px) {
+  p.lead {
+    font-size: 16px;
+  }
+  .interests {
+    font-size: 16px;
+  }
+  #certificados li{
+    font-size: 16px;
+  }
 }
 
 .subheading {
@@ -11963,6 +11989,7 @@ section.resume-section .resume-section-content {
     padding-left: 5rem;
     padding-right: 5rem;
   }
+  
 }
 @media (max-width: 768px) {
   section.resume-section {
@@ -11985,9 +12012,6 @@ section.resume-section .resume-section-content {
   .subheading {
     font-size: 1.2rem;
   }
-  .lead {
-    font-size: 16px !important;
-  }
 }
 .princ {
   text-align: justify;
@@ -11997,11 +12021,61 @@ section.resume-section .resume-section-content {
 .exp {
   width: 100%;
   text-align: justify;
+  font-size: 16px;
 }
-.interests {
-  text-align: justify;
-  font-size: 18px;
+.project-desc{
+  font-size: 20px;
 }
+@media (max-width: 1200px) {
+  .project-desc{
+    font-size: 18px;
+  }
+}
+@media (max-width: 900px) {
+  .exp {
+    font-size: 15px;
+  }
+  .project-desc{
+    font-size: 16px;
+  }
+}
+@media (max-width: 700px) {
+  .project-desc{
+    font-size: 18px;
+  }
+  .exp {
+    font-size: 14px;
+  }
+}
+@media (max-width: 700px) {
+  .project-desc{
+    font-size: 16px;
+  }
+  .skills-items {
+    font-size: 15px;
+  }
+  .skills {
+    font-size: 15px;
+  }
+}
+@media (max-width: 500px) {
+  .project-desc{
+    font-size: 15px;
+  }
+  .skills-items {
+    font-size: 14px;
+  }
+  .skills {
+    font-size: 14px;
+  }
+}
+@media (max-width: 400px) {
+  .skills {
+    font-size: 13px;
+  }
+}
+
+
 .ver-cv {
   font-size: 18px;
   text-decoration: none;
@@ -12029,7 +12103,9 @@ section.resume-section .resume-section-content {
   }
   .accordion-body {
     padding: 2rem 2rem;
+    font-size: 15px;
   }
+
 }
 @media (max-width: 700px) {
   .img-btn-modal {
@@ -12038,6 +12114,7 @@ section.resume-section .resume-section-content {
 
   .accordion-body {
     padding: 1.5rem 1.5rem;
+
   }
 }
 @media (max-width: 600px) {
@@ -12053,10 +12130,16 @@ section.resume-section .resume-section-content {
     height: 45px;
   }
 }
+@media (max-width: 500px) {
+  .accordion-body {
+    font-size: 14px;
+  }
+}
 @media (max-width: 450px) {
   .img-btn-modal {
     height: 40px;
   }
+  
 }
 @media (max-width: 400px) {
   .img-btn-modal {
@@ -12078,25 +12161,59 @@ section.resume-section .resume-section-content {
   margin: 0 10px 0 0;
 }
 .modal-links{
+  font-size: 16px;
   margin: 30px 10px 40px 10px;
+}
+.modal-links a{
+  font-size: 18px;
+  font-weight: 500;
 }
 .modal-links div{
   margin: 10px 0px;
 }
-
+@media (max-width: 1100px) {
+  .modal-links{
+    font-size: 15px;
+  }
+  .modal-links a{
+    font-size: 17px;
+    font-weight: 500;
+  }
+}
 @media (max-width: 700px) {
   .modal-links span{
     font-size: 15px;
   }
-}
-@media (max-width: 700px) {
   .modal-links{
     margin: 20px 10px 30px 10px;
+    font-size: 14px;
+  }
+  .modal-links a{
+    font-size: 16px;
+    font-weight: 500;
   }
 }
 @media (max-width: 500px) {
   .modal-links{
     margin: 20px 10px 30px 3px;
+  }
+}
+@media (max-width: 415px) {
+  .modal-links{
+    font-size: 13px;
+  }
+  .modal-links a{
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+@media (max-width: 350px) {
+  .modal-links{
+    font-size: 12px;
+  }
+  .modal-links a{
+    font-size: 13px;
+    font-weight: 500;
   }
 }
 .modal-proyectos{

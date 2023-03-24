@@ -55,7 +55,7 @@ function Skills(){
               <div className="">ANDROID</div>
             </li>
           </ul>
-          <div className="container mt-md-4 mt-lg-5 mt-3">
+          <div className="container mt-md-4 mt-lg-5 mt-3 skills-items">
             <div className="row fw-bold justify-content-evenly">
               <div className="col-sm-6 col-md-6  col-lg-6 col-xl-3">
                 VISUAL STUDIO CODE
@@ -89,7 +89,7 @@ function Skills(){
           </div>
           <br />
           <div className="container">
-            <div className="row fw-bold justify-content-evenly text-sm-center">
+            <div className="row fw-bold justify-content-evenly text-sm-center skills">
               <div className="col-12 col-xl-5">
                 {language.skillsText1}
                 <br />

@@ -5,7 +5,7 @@ function Certificados(){
         <section className="resume-section" id="certificados">
         <div className="resume-section-content">
           <h2 className=" mb-4  mb-md-5 text-center text-md-start" style={{color:color.menu}}>{language.certTitle}</h2>
-          <ul className="fa-ul ms-3 mb-0">
+          <ul className="fa-ul ms-3 mb-0 ">
             <li className="mb-3">
               <span className="fa-li" style={{color:color.icons, fill:color.icons}}>
                 <i className="fas fa-angle-double-right"></i>

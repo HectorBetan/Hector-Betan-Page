@@ -10,6 +10,13 @@ export const useApp = () => {
 export function AppProvider({ children }) {
     const [color, setColor] = useState();
     const [language, setLanguage]= useState();
+    const [activeModal, setActiveModal] = useState(false);
+    const activarModal = ()=>{
+      setActiveModal(true)
+    }
+    const desactivarModal = ()=>{
+      setActiveModal(false)
+    }
     if (!color){
       let c
       try {
@@ -81,6 +88,9 @@ export function AppProvider({ children }) {
             language,
             setSpanish,
             setEnglish,
+            activeModal,
+            activarModal,
+            desactivarModal,
           }}
         >
           {children}

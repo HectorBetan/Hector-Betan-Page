@@ -14,7 +14,7 @@ function Home(){
     const navigate = useNavigate()
     const location = useLocation()
     const num = navs.indexOf(location.pathname)
-    const { color, language, setNigth, setMid, setDay, setSpanish, setEnglish } = useApp()
+    const { color, language, setNigth, setMid, setDay, setSpanish, setEnglish, activeModal } = useApp()
     const [nav, setNav] = useState(num)
     const [tema, setTema] = useState()
     const [w, setW] = useState(window.innerWidth);
@@ -63,14 +63,17 @@ function Home(){
                         
                   break;
                 case 38:
-                    if(nav!==0){
-                        setNav(nav-1);
-                        navigate(navs[nav-1])
-                    } else {
-                        setNav(6)
-                        navigate(navs[6])
+                    if(!activeModal){
+                        if(nav!==0){
+                            setNav(nav-1);
+                            navigate(navs[nav-1])
+                        } else {
+                            setNav(6)
+                            navigate(navs[6])
+                        }
+                      break;
                     }
-                  break;
+                    break;
                 case 37:
                     if (tema === 1){
                         setTema(0)
@@ -84,14 +87,17 @@ function Home(){
                     }
                   break;
                 case 40:
-                    if(nav!==6){
-                        setNav(nav+1);
-                        navigate(navs[nav+1])
-                    } else {
-                        setNav(0)
-                        navigate(navs[0])
+                    if(!activeModal){
+                        if(nav!==6){
+                            setNav(nav+1);
+                            navigate(navs[nav+1])
+                        } else {
+                            setNav(0)
+                            navigate(navs[0])
+                        }
+                      break;
                     }
-                  break;
+                    break;
                   case 76:
 
                     if(language.lang === "es"){
@@ -111,7 +117,7 @@ function Home(){
         return () => {
           document.removeEventListener('keydown', handleKeyPress);
         };
-      }, [nav, navigate, tema, setDay, setMid, setNigth, color, language, setEnglish, setSpanish, w]);
+      }, [nav, navigate, tema, setDay, setMid, setNigth, color, language, setEnglish, setSpanish, w, activeModal]);
     const navCel = (pos) =>{
         window.scrollTo(0, 0);
         if (pos === "mas"){
