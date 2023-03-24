@@ -10,6 +10,7 @@ import { useApp } from "../context/AppContext";
 import {useState, useEffect} from "react"
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { useSwipeable } from "react-swipeable";
+import '../style/Home.css';
 const navs = ["/","/experiencia","/educacion","/skills","/proyectos", "/intereses", "/certificaciones"]
 function Home(){
     const navigate = useNavigate()
@@ -171,13 +172,13 @@ function Home(){
         <div className="">
 
             <Routes>
-                <Route path="/" element={<Perfil />} />
-                <Route path="/experiencia/*" element={<Experiencia />} />
-                <Route path="/educacion/*" element={<Educacion />} />
-                <Route path="/skills/*" element={<Skills  />} />
-                <Route path="/proyectos/*" element={<Proyectos />} />
-                <Route path="/intereses/*" element={<Intereses />} />
-                <Route path="/certificaciones/*" element={<Certificados />} />
+                <Route path="" element={<Perfil />} />
+                <Route path="/experiencia" element={<Experiencia />} />
+                <Route path="/educacion" element={<Educacion />} />
+                <Route path="/skills" element={<Skills  />} />
+                <Route path="/proyectos" element={<Proyectos />} />
+                <Route path="/intereses" element={<Intereses />} />
+                <Route path="/certificaciones" element={<Certificados />} />
             </Routes>
         </div>
         {nav !== 0 && <div className="d-md-none d-flex flex-row justify-content-between ico" style={{color: color.title1}}>
