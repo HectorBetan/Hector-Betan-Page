@@ -171,7 +171,7 @@ function Home(){
         <div className="">
 
             <Routes>
-                <Route path="/*" element={<Perfil />} />
+                <Route path="/" element={<Perfil />} />
                 <Route path="/experiencia/*" element={<Experiencia />} />
                 <Route path="/educacion/*" element={<Educacion />} />
                 <Route path="/skills/*" element={<Skills  />} />
