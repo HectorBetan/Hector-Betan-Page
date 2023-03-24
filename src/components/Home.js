@@ -9,6 +9,7 @@ import Proyectos from "./sections/Proyectos";
 import { useApp } from "../context/AppContext";
 import {useState, useEffect} from "react"
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { useSwipeable } from "react-swipeable";
 const navs = ["/","/experiencia","/educacion","/skills","/proyectos", "/intereses", "/certificaciones"]
 function Home(){
     const navigate = useNavigate()
@@ -40,11 +41,42 @@ function Home(){
         }
         
       }, [num, location, nav]);
+      const handlers = useSwipeable;
+        const { ref: documentRef } = handlers({
+            onSwipedRight: () => {
+                if(!activeModal){
+                    if(nav!==0){
+                        setNav(nav-1);
+                        navigate(navs[nav-1])
+                    } else {
+                        setNav(6)
+                        navigate(navs[6])
+                    }
+                }
+            },
+            onSwipedLeft: () =>{
+                if(!activeModal){
+                    if(nav!==6){
+                        setNav(nav+1);
+                        navigate(navs[nav+1])
+                    } else {
+                        setNav(0)
+                        navigate(navs[0])
+                    }
+                }
+            },
+        })
+      useEffect(() => {
+        documentRef(document);
+        // Clean up swipeable event listeners
+        return () => documentRef({});
+      });
     useEffect(() => {
         if (color && !tema){
             setTema(parseInt(color.tema))
             
         }
+        
         const handleKeyPress = (event) =>{
             if(w>=768)
             {const { keyCode } = event;
