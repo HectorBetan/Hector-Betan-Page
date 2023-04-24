@@ -151,18 +151,6 @@ function Home(){
           document.removeEventListener('keydown', handleKeyPress);
         };
       }, [nav, navigate, tema, setDay, setMid, setNigth, color, language, setEnglish, setSpanish, w, activeModal]);
-    const navCel = (pos) =>{
-        window.scrollTo(0, 0);
-        if (pos === "mas"){
-            navigate(navs[nav+1])
-            setNav(nav+1)
-        } else{
-            navigate(navs[nav-1])
-            
-            setNav(nav-1)
-        }
-
-    }
     if (color && language)
     return(
     <div className="d-flex flex-column" style={{backgroundColor: color.background, color: color.text1}}>
@@ -172,7 +160,7 @@ function Home(){
         <div className="">
 
             <Routes>
-                <Route path="" element={<Perfil />} />
+                <Route path="/*" element={<Perfil />} />
                 <Route path="/experiencia" element={<Experiencia />} />
                 <Route path="/educacion" element={<Educacion />} />
                 <Route path="/skills" element={<Skills  />} />
@@ -181,30 +169,6 @@ function Home(){
                 <Route path="/certificaciones" element={<Certificados />} />
             </Routes>
         </div>
-        {nav !== 0 && <div className="d-md-none d-flex flex-row justify-content-between ico" style={{color: color.title1}}>
-            <div className="text-start rotate-next" onClick={(e)=>{
-                e.preventDefault()
-                
-                navCel("menos")
-            }}>
-                <i className="bi bi-fast-forward-fill pb-0 mb-5 ps-4 pe-4 m-3 me-sm-5 ms-sm-5"></i>
-            </div>
-            {nav !== 6 && nav !== 0 &&<div className="text-end" onClick={(e)=>{
-                e.preventDefault()
-                
-                navCel("mas")
-            }}>
-            <i className="bi bi-fast-forward-fill pb-0 mb-5 ps-4 pe-4 m-3 me-sm-5 ms-sm-5"></i>
-            </div>}
-        </div>}
-        {nav === 0 && <div className="d-md-none d-flex flex-row justify-content-end  ico"  style={{color: color.title1}}>
-<div className="text-end" onClick={(e)=>{
-                e.preventDefault()
-                navCel("mas")
-            }}>
-<i className="bi bi-fast-forward-fill p-4 m-2 pb-0 mb-0"></i>
-            </div>
-        </div>}
         
     </div>
     )

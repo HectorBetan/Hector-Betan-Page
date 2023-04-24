@@ -1,7 +1,7 @@
 {
   "name": "hector-betan",
-  "homepage": "https://hectorbetan.github.io/",
   "version": "0.1.0",
+  "homepage": "https://hector-betancourt.web.app/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.3.0",
@@ -13,7 +13,6 @@
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.3",
     "font-awesome": "^4.7.0",
-    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
@@ -26,8 +25,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

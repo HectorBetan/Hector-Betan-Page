@@ -1,6 +1,11 @@
 import { useApp } from "../../context/AppContext";
 import { useState, useEffect } from "react";
 import { Button, Modal, Accordion } from "react-bootstrap";
+import cer1 from "../../assets/proyectos/cer/cer1.jpg";
+import cer2 from "../../assets/proyectos/cer/cer2.jpg";
+import cer3 from "../../assets/proyectos/cer/cer3.jpg";
+import cer4 from "../../assets/proyectos/cer/cer4.jpg";
+import cer5 from "../../assets/proyectos/cer/cer5.jpg";
 import col1 from "../../assets/proyectos/col/col1.jpg";
 import col2 from "../../assets/proyectos/col/col2.jpg";
 import col3 from "../../assets/proyectos/col/col3.jpg";
@@ -22,14 +27,24 @@ import hector3 from "../../assets/proyectos/hector/h3.jpg";
 import hector4 from "../../assets/proyectos/hector/h4.jpg";
 function Proyectos() {
   const { color, language, activarModal, desactivarModal } = useApp();
+  const [show0, setShow0] = useState(false);
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
   const [show3, setShow3] = useState(false);
   const [show4, setShow4] = useState(false);
+  const fotosCer = [cer1, cer2, cer3, cer4, cer5];
   const fotosCol = [col1, col2, col3, col4, col5];
   const fotosPets = [pets1, pets2, pets3, pets4, pets5];
   const fotosExp = [exp1, exp2, exp3, exp4, exp5];
   const fotosHector = [hector1, hector2, hector3, hector4];
+  const handleShow0 = () => {
+    setShow0(true);
+    activarModal();
+  };
+  const handleClose0 = () => {
+    setShow0(false);
+    desactivarModal();
+  };
   const handleShow1 = () => {
     setShow1(true);
     activarModal();
@@ -115,6 +130,170 @@ function Proyectos() {
           })}
         </div>
       </div>
+    );
+  };
+  const Modal0 = () => {
+    return (
+      <>
+        <Modal
+          show={show0}
+          onHide={handleClose0}
+          size="xl"
+          className="modal-proyectos"
+        >
+          <Modal.Header
+            closeButton
+            closeVariant={color.closeVariant}
+            style={{
+              backgroundColor: color.modalTitle1,
+              borderBottom: `2px solid ${color.modalBorder}`,
+            }}
+          >
+            <Modal.Title className="fs-4" style={{ color: color.modalTitle }}>
+              Cerebritos Triviapp
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body
+            style={{ backgroundColor: color.backgroundModal }}
+            className="text-center"
+          >
+            <img src={color.logoCerebritos} alt="" className="logo-img"></img>
+            <div
+              className="text-start text-md-center modal-links"
+              style={{
+                color: color.titleView,
+              }}
+            >
+              <div>{language.projectTitles.a}</div>
+
+              <div>
+                <a
+                  className=""
+                  role="button"
+                  href="https://colombia-emprende.vercel.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ color: color.linksView }}
+                >
+                  https://cerebritos-triviapp.vercel.app/
+                </a>
+              </div>
+              <div>{language.projectTitles.b}</div>
+              <div>
+                <a
+                  className=""
+                  role="button"
+                  href="https://github.com/HectorBetan/Trivia"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ color: color.linksView }}
+                >
+                  https://github.com/HectorBetan/Trivia"
+                </a>
+              </div>
+            </div>
+            <div>
+              <Accordion
+                className="text-start"
+                defaultActiveKey={["0", "1"]}
+                alwaysOpen
+                flush
+              >
+                <Accordion.Item
+                  eventKey="0"
+                  style={{ backgroundColor: color.accButton }}
+                >
+                  <Accordion.Header>
+                    <span className="fs-3" style={{ color: color.accsubt }}>
+                    {language.projectTitles.c}
+                    </span>
+                  </Accordion.Header>
+                  <Accordion.Body
+                    style={{
+                      backgroundColor: color.backgroundAcc,
+                      color: color.text1,
+                    }}
+                  >
+                    {language.cerebritos.info}
+                  </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item
+                  eventKey="1"
+                  style={{ backgroundColor: color.accButton }}
+                >
+                  <Accordion.Header>
+                    <span className="fs-3" style={{ color: color.accsubt }}>
+                    {language.projectTitles.d}
+                    </span>
+                  </Accordion.Header>
+                  <Accordion.Body
+                    style={{
+                      backgroundColor: color.backgroundAcc,
+                      color: color.text1,
+                    }}
+                  >
+                    <FotosView data={fotosCer}></FotosView>
+                  </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item
+                  eventKey="2"
+                  style={{ backgroundColor: color.accButton }}
+                >
+                  <Accordion.Header>
+                    <span className="fs-3" style={{ color: color.accsubt }}>
+                    {language.projectTitles.e}
+                    </span>
+                  </Accordion.Header>
+                  <Accordion.Body
+                    style={{
+                      backgroundColor: color.backgroundAcc,
+                      color: color.text1,
+                    }}
+                  >
+                    {language.cerebritos.func}
+                  </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item
+                  eventKey="3"
+                  style={{ backgroundColor: color.accButton }}
+                >
+                  <Accordion.Header>
+                    <span className="fs-3" style={{ color: color.accsubt }}>
+                    {language.projectTitles.f}
+                    </span>
+                  </Accordion.Header>
+                  <Accordion.Body
+                    style={{
+                      backgroundColor: color.backgroundAcc,
+                      color: color.text1,
+                    }}
+                  >
+                    {language.cerebritos.tech}
+                  </Accordion.Body>
+                </Accordion.Item>
+              </Accordion>
+            </div>
+          </Modal.Body>
+          <Modal.Footer
+            style={{
+              backgroundColor: color.modalTitle1,
+              borderTop: `2px solid ${color.modalBorder}`,
+            }}
+            className="justify-content-center"
+          >
+            <Button
+              style={{
+                backgroundColor: color.buttonModal,
+                color: color.buttonTitleModal,
+              }}
+              size="md"
+              onClick={handleClose1}
+            >
+              {language.projectTitles.close}
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
     );
   };
   const Modal1 = () => {
@@ -500,12 +679,12 @@ function Proyectos() {
                 <a
                   className=""
                   role="button"
-                  href="https://hectorbetan.github.io/"
+                  href="https://hector-betancourt.web.app/"
                   target="_blank"
                   rel="noreferrer"
                   style={{ color: color.linksView }}
                 >
-                  https://hectorbetan.github.io/
+                  https://hector-betancourt.web.app/
                 </a>
               </div>
               <div>{language.projectTitles.b}</div>
@@ -761,6 +940,7 @@ function Proyectos() {
   };
   return (
     <section className="resume-section" id="educacion">
+      <Modal0 />
       <Modal1 />
       <Modal2 />
       <Modal3 />
@@ -772,6 +952,28 @@ function Proyectos() {
         >
           {language.proyTitle}
         </h2>
+        <div className="d-flex flex-column flex-lg-row justify-content-start mb-4 mb-lg-5">
+          <div className="flex-grow-1">
+            <h3 className="mb-0" style={{ color: color.title1 }}>
+              Cerebritos Triviapp
+            </h3>
+            <div className="project-desc">
+            {language.projects.cer}
+            </div>
+          </div>
+          <div className="flex-shrink-0 ms-lg-5 me-lg-2 me-xl-4 me-xxl-5">
+            <button
+              className="mt-2"
+              style={{
+                color: color.buttonTitle,
+                backgroundColor: color.button,
+              }}
+              onClick={handleShow0}
+            >
+              {language.verInfo}
+            </button>
+          </div>
+        </div>
         <div className="d-flex flex-column flex-lg-row justify-content-start mb-4 mb-lg-5">
           <div className="flex-grow-1">
             <h3 className="mb-0" style={{ color: color.title1 }}>

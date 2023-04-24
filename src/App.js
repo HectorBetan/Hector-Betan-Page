@@ -6,13 +6,13 @@ import Home from './components/Home';
 import { Route, Routes } from 'react-router-dom';
 function App() {
   return (
-    <AppProvider>
-      <div className="App">
-            <Routes>
-                <Route path="/*" element={<Home />} />
-            </Routes>
-      </div>
-    </AppProvider>
+    <Routes>
+
+            
+                <Route path="/*" element={<AppProvider><Home /></AppProvider>} exact />
+            
+        </Routes>
+
     
   );
 }

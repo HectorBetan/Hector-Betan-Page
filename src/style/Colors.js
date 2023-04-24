@@ -6,6 +6,7 @@ import logoExp from "../assets/img/logo-expertapp.png"
 import logoExp1 from "../assets/img/logo-expertapp1.png"
 import logoHector from "../assets/img/logo-hector.png"
 import logoHector1 from "../assets/img/logo-hector1.png"
+import logoCerebritos from "../assets/img/logo-cerebritos.png"
 export const color1={
     background: "#f1f8fe",
     title1: "#0f2f4b",
@@ -48,7 +49,7 @@ export const color1={
     logoPets: logoPets,
     logoExp: logoExp,
     logoHector: logoHector,
-    
+    logoCerebritos: logoCerebritos,
 }
 export const color2={
     background: "#08121c",
@@ -92,7 +93,7 @@ export const color2={
     logoPets: logoPets1,
     logoExp: logoExp1,
     logoHector: logoHector1,
-    
+    logoCerebritos: logoCerebritos,
 }
 export const color3={
     background: "#fff",
@@ -136,4 +137,5 @@ export const color3={
     logoPets: logoPets,
     logoExp: logoExp,
     logoHector: logoHector,
+    logoCerebritos: logoCerebritos,
 }

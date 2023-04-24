@@ -47,6 +47,7 @@ export const spanish={
     pdf:"hectorbetancourt_cv.pdf",
     verInfo: "Ver Información",
     projects:{
+        cer: "Juegos de trivias hecho con ReactJs y Firebase.",
         col: "WebApp tipo e-commerce hecha con arquitectura MERN.",
         pets: "Web estatica hecha con ReactJs, HTML y CSS.",
         exp: "Aplicación móvil para Android, hecha con Java y usando Firebase como Server.",
@@ -61,6 +62,11 @@ export const spanish={
         f:"Tecnológias",
         g:"Conclusión",
         close:"Cerrar",
+    },
+    cerebritos:{
+        info: "Cerebritos Triviapp es una aplicación web de juego de trivias diseñada para usuarios que disfrutan de retos intelectuales y desean pasar un buen rato jugando. La aplicación utiliza la tecnología React.js para el frontend y Firebase para la autenticación de usuarios y la base de datos, lo que proporciona una experiencia de usuario segura y eficiente. La app cuenta con múltiples dificultades y desafíos diarios. Cerebritos Triviapp es una aplicación web que no sólo entretiene, sino que también educa. Ofrece una experiencia de usuario completa y satisfactoria gracias a sus múltiples funcionalidades, desafíos y la tecnología usada.",
+        func: "La aplicación cuenta con múltiples funcionalidades para los usuarios, como registrarse, iniciar sesión, juego en múltiples dificultades, desafíos diarios, guardar partidas, acumular puntos y monedas, acceder a la tienda para comprar elementos con las monedas acumuladas, comprar imágenes creadas con inteligencia artificial, administrar su usuario, y jugar diferentes retos y desafíos. Además, los usuarios pueden disfrutar de un amplio conjunto de preguntas en diferentes categorías, como historia, ciencia, entretenimiento, deportes, etc. La aplicación ofrece una amplia selección de preguntas, asegurándose de mantener a los usuarios entretenidos y aprendiendo de manera divertida, Cerebritos Triviapp es una app diseñada para aprender divirtiéndose.",
+        tech: "La tecnología utilizada en el desarrollo de Cerebritos Triviapp se basa en React.js para el frontend y Firebase para la autenticación de usuarios y la base de datos. La aplicación también hace uso de otras herramientas como Bootstrap, React Bootstrap, y diseño e imágenes creadas con ayuda de inteligencia artificial. Todo esto permite una integración perfecta entre las diferentes funcionalidades de la aplicación, garantizando una experiencia de usuario divertida, creativa, fluida y eficiente.",
     },
     colEmp:{
         info: "Colombia Emprende es una aplicación web de comercio electrónico diseñada para ayudar a los emprendedores colombianos a vender sus productos de manera fácil y rápida. Con esta plataforma, los usuarios después de registrarse pueden comprar o publicar su emprendimiento, dependiendo de sus necesidades, la aplicación ofrece una gran cantidad de funciones tanto para los compradores como para los emprendedores vendedores, lo que hace que sea una herramienta muy completa y útil para aquellos que desean vender o comprar productos en línea de manera segura y eficiente. La aplicación utiliza un stack tecnológico MERN, que incluye MongoDB, Express, React y Node.js, para proporcionar una experiencia de usuario de alta calidad. Además, la autenticación de usuarios se maneja con Firebase, lo que permite a los usuarios registrarse con su correo electrónico y contraseña o con su cuenta de Google.",
@@ -129,6 +135,7 @@ export const english={
     pdf:"hectorbetancourt_en_cv.pdf",
     verInfo: "Watch Info",
     projects:{
+        cer: "Trivia game made with ReactJs and Firebase.",
         col: "An e-commerce WebApp made with MERN architecture.",
         pets: "A static website made with ReactJs, HTML, and CSS.",
         exp: "An Android mobile application made with Java and using Firebase as a Server.",
@@ -143,6 +150,11 @@ export const english={
         f:"Technologies",
         g:"Conclusion",
         close:"Close",
+    },
+    cerebritos:{
+        info: "Cerebritos Triviapp is a trivia game designed for users who enjoy intellectual challenges and want to have a good time playing. The application uses React.js technology for the frontend and Firebase for user authentication and database, providing a secure and efficient user experience. The app features multiple difficulties and daily challenges. Cerebritos Triviapp is a web application that not only entertains but also educates. It offers a complete and satisfying user experience thanks to its multiple features, challenges, and technology used.",
+        func: "The application offers a range of features for users, including the ability to register and log in, play at different difficulty levels, participate in daily challenges, save game progress, earn points and coins, access the in-app store to purchase items with accumulated coins, buy images created with artificial intelligence, manage user accounts, and play various challenges in categories such as history, science, entertainment, and sports. With a wide selection of questions, provides a fun and educational experience for users, Cerebritos Triviapp is an app designed to learn while having fun.",
+        tech: "Cerebritos Triviapp was developed using React.js for the frontend and Firebase for user authentication and database management. Additionally, the application incorporates other tools such as Bootstrap and React Bootstrap, as well as designs and images created with artificial intelligence. These technologies work together to seamlessly integrate the various features of the app, providing users with a fun, creative, and efficient experience.",
     },
     colEmp:{
         info: "Colombia Emprende is a web e-commerce application designed to help Colombian entrepreneurs sell their products easily and quickly. Users can buy or publish their endeavors depending on their needs, and the application offers a wide range of functions for both buyers and seller entrepreneurs, making it a useful and complete tool for those who want to sell or buy products securely and efficiently online. The platform uses the MERN technology stack, which includes MongoDB, Express, React, and Node.js, to provide a high-quality user experience. User authentication is also handled with Firebase, allowing users to register with either their email and password or their Google account.",
