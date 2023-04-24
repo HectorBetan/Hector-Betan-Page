@@ -188,7 +188,7 @@ function Proyectos() {
                   rel="noreferrer"
                   style={{ color: color.linksView }}
                 >
-                  https://github.com/HectorBetan/Trivia"
+                  https://github.com/HectorBetan/Trivia
                 </a>
               </div>
             </div>
